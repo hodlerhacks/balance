@@ -23,30 +23,34 @@ let staging = false;
 let repository;
 let message = 'Enter selection: ';
 
+let selection = process.argv[2] || null;
+
 start();
 
 function start() {
-    console.clear();
-    console.log('');
-    console.log('---------------------------------------------');
-    console.log('');
-    console.log('            Balance Bot Installer');
-    console.log(`                   v${installerVersion}`);
-    console.log('');
-    console.log('---------------------------------------------');
-    console.log('');
-    console.log('  1 - Install Balance Bot');
-    console.log('  2 - Update Balance Bot');
-    console.log('  3 - Re-install Balance Bot');
-    console.log('');
-    console.log('  u - Update this installer');
-    console.log('');
-    console.log('  0 - Exit');
-    console.log('');
-    console.log('---------------------------------------------');
-    console.log('');
-    const selection = prompt(message);
-    console.log('');
+    if (!selection) {
+        console.clear();
+        console.log('');
+        console.log('---------------------------------------------');
+        console.log('');
+        console.log('            Balance Bot Installer');
+        console.log(`                   v${installerVersion}`);
+        console.log('');
+        console.log('---------------------------------------------');
+        console.log('');
+        console.log('  1 - Install Balance Bot');
+        console.log('  2 - Update Balance Bot');
+        console.log('  3 - Re-install Balance Bot');
+        console.log('');
+        console.log('  u - Update this installer');
+        console.log('');
+        console.log('  0 - Exit');
+        console.log('');
+        console.log('---------------------------------------------');
+        console.log('');
+        selection = prompt(message);
+        console.log('');
+    }
 
     switch (selection) {
         case '1':
