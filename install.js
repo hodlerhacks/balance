@@ -144,7 +144,7 @@ function install() {
             console.log('Installing Balance Bot...');
 
             try {
-                fse.moveSync(installpath + bbfile, basepath + bbfile, { overwrite: true });
+                if (fse.pathExistsSync(installpath + bbfile)) fse.moveSync(installpath + bbfile, basepath + bbfile, { overwrite: true });
             } catch (err) {
                 console.log('Error occured during Balance Bot installation: ', err);
                 return process.exit(1);
