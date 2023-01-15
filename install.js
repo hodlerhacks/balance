@@ -2,6 +2,9 @@
 // REQUIRES GIT TO BE LOCALLY INSTALLED
 // ------------------------------------
 
+// Supported argument:
+// selection -> bypass menu
+
 const spawn = require('child_process').spawn;
 const execSync = require('child_process').execSync;
 const fse = require('fs-extra');
